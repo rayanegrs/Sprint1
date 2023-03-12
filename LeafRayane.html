@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEAF PROJECT</title>
+</head>
+<body>
+    <h2><b style = "color:green">LEAF PROJECT</b></h2>
+    <h4><b style = "color:rgb(34, 82, 34)">Insatisfeito com seu retorno? simule o seu financeiro conosco...</b></h4>
+
+    Insira o valor da unidade: <input id="unidade"><br>
+    Insira aproximadamente quantidade correspondente a suas colheitas: <input id="colheita"><br>
+    Insira a frequência atual do monitoramento : <input id="freq"> <br>
+    Insira o tempo esperado da colheita : <input id = "tempo"> <br>
+    Insira a perda de plantações de alface: <input id="perca"><br>
+
+    <button onclick = "calcular()">SIMULE AQUI</button><br>
+    <br>
+    <div id ="div_leaf"></div>
+
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var valordaunidade = Number (unidade.value)
+        var quantidadecolheita = Number (colheita.value)
+        var frequencia = Number (freq.value)
+        var tempoesperado= Number(tempo.value)
+        var percadeplantacoes = Number(perca.value)
+         
+        var lucro = (valordaunidade * quantidadecolheita)
+        var lucroldr= Number (lucro * percadeplantacoes)
+        var agilizar = Number (tempoesperado * 1.50)
+        
+        div_leaf.innerHTML= `<br> De acordo com a análise de dados obtidos, sua empresa está recebendo menos do que poderia,
+        <br> tendo como lucro o valor total de ${lucro},00 em ${tempoesperado} dias, já que por sua vez a frequência do monitoramento
+        <br>está a baixo do necessário, portanto recomendamos nossos sensores LDR que monitoriza em até 24 horas por dia, <br>
+        diminuindo até 80% da perca de plantação, visando lucro final de ${lucroldr},00 além de agilizar em até 50% o tempo esperado 
+        <br> <br>
+        <b style = "color:green"> RECEBA MAIS EM MENOS TEMPO E GARANTA QUALIDADE EM SEUS SERVIÇOS </b>`
+    }
+</script>
